@@ -11,7 +11,7 @@ public class ScoreItem : MonoBehaviour
         Debug.Log("Kollision erkannt!");
         if (collision.gameObject.tag == "Player")
         {
-            //collision.gameObject.GetComponent<Player>().score += score;
+            collision.gameObject.GetComponent<Player>().score += score;
             Destroy(gameObject);
         }
     }

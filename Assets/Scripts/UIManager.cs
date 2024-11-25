@@ -5,13 +5,17 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public Player player1;
-    public TMP_Text p1Text;
+    public Player[] player;
+    public TMP_Text[] pText;
 
     // Update is called once per frame
     void Update()
     {
-        float x = 32342.34f;
-        string a = x.ToString();
+        for (int i = 0; i < player.Length; i++)
+        {
+            pText[i].text = "Player " + (i + 1)  + ": " + player[i].score.ToString();
+        }
+
+        
     }
 }
