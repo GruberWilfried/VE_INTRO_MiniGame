@@ -13,12 +13,15 @@ public class Player : MonoBehaviour
     public KeyCode leftKey;
     public KeyCode rightKey;
 
+    private AudioSource audio;
+    public AudioClip deathSound;
+
     // Funktionen die von Unity selbständig aufgerufen werden durch Vererbung von MonoBehaviour
 
     // Wenn Player Objekt das erste Mal in der Szene vorkommt
     private void Start()
     {
-        
+        audio = GameObject.FindAnyObjectByType<AudioSource>();
     }
 
     // Wird einmal pro Frame aufgerufen
@@ -75,16 +78,10 @@ public class Player : MonoBehaviour
     // Wenn ein GameObject mit unserem eigenen kollidiert
     private void OnCollisionEnter(Collision collision)
     {
-        //Debug.Log("Collision wurde erkannt");
-        //if ("Hammer" == collision.transform.tag)
-        //{
-        //    Debug.Log("Hammer wurde berührt!");
-        //    Destroy(collision.gameObject);
-        //}
-        //if ("Coin" == collision.transform.tag)
-        //{
-        //    Debug.Log("Coin wurde berührt!");
-        //}
+        if (collision.gameObject.tag == "Ground")
+        {
+            audio.PlayOneShot(deathSound);
+        }
     }
 
     private void OnCollisionStay(Collision collision)

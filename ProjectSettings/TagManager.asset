@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hammer
   - Coin
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -8,7 +8,7 @@ public class ScoreItem : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Kollision erkannt!");
+        //Debug.Log("Kollision erkannt!");
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<Player>().score += score;
