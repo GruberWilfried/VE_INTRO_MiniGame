@@ -3,7 +3,6 @@ using UnityEngine; // Bibliothek / Library von Klassen (Objekten)
 // Unsere Klasse Player erbt von MonoBehaviour (Methoden/Variablen)
 public class Player : MonoBehaviour
 {
-
     public int score;
     public Rigidbody rb;
     public float forwardForce;
@@ -80,8 +79,13 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            audio.PlayOneShot(deathSound);
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        audio.PlayOneShot(deathSound);
     }
 
     private void OnCollisionStay(Collision collision)

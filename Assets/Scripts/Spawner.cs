@@ -56,9 +56,4 @@ public class Spawner : MonoBehaviour
 
     }
 
-    void Test()
-    {
-        float x = 342.54f;
-        string a = x.ToString();
-    }
 }
